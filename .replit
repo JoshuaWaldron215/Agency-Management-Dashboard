@@ -1,0 +1,73 @@
+modules = ["nodejs-20", "web", "postgresql-16"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["bash", "-c", "npx tsx server/index.ts & npx vite preview --host 0.0.0.0 --port 5000"]
+build = ["npm", "run", "build"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 3001
+externalPort = 5173
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 34195
+externalPort = 4200
+
+[[ports]]
+localPort = 38313
+externalPort = 3001
+
+[[ports]]
+localPort = 39835
+externalPort = 3002
+
+[[ports]]
+localPort = 41931
+externalPort = 5000
+
+[[ports]]
+localPort = 42269
+externalPort = 3003
+
+[[ports]]
+localPort = 44035
+externalPort = 3000
+
+[userenv]
+
+[userenv.shared]
+VITE_SUPABASE_URL = "https://jgozjfcslpewoyaokrrw.supabase.co"
+VITE_SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impnb3pqZmNzbHBld295YW9rcnJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ5NTEwMTYsImV4cCI6MjA4MDUyNzAxNn0.3EugEhmA80n9kcofV13Eyn-0oqgfP_AU-HfOoLmKuQs"
