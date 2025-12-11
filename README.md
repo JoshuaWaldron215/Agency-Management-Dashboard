@@ -1,73 +1,136 @@
-# Welcome to your Lovable project
+# Agency Management Dashboard
 
-## Project info
+A full-stack SaaS platform for agency performance tracking, earnings management, and team coordination. Built for mid-sized agencies with 30+ team members.
 
-**URL**: https://lovable.dev/projects/10fb3bcc-c1bf-4d84-8afe-b29c88f4a789
+![React](https://img.shields.io/badge/React-18.3-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-purple)
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+### Performance Tracking
+- Real-time earnings calculator with transaction parsing
+- Weekly performance sheets with commission tracking
+- Hourly rate calculations and bonus management
+- Per-model earnings breakdown with multi-timeframe views
 
-**Use Lovable**
+### Analytics Dashboard
+- Interactive charts and data visualization (Recharts)
+- Leaderboard rankings with achievement badges
+- Performance trend analysis
+- Goal tracking and progress indicators
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/10fb3bcc-c1bf-4d84-8afe-b29c88f4a789) and start prompting.
+### Team Management
+- Role-based access control (Admin/Chatter roles)
+- Team assignment and organization
+- User signup approval system
+- Comprehensive audit logging
 
-Changes made via Lovable will be committed automatically to this repo.
+### Data Management
+- CSV export functionality across all major views
+- Transaction history with filtering and pagination
+- Real-time data synchronization
+- Secure data handling with Row-Level Security
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Frontend
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling
+- **shadcn/ui** components (Radix UI primitives)
+- **TanStack Query** for server state management
+- **Recharts** for data visualization
+- **React Hook Form** with Zod validation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Backend
+- **Node.js** with Express
+- **PostgreSQL** via Supabase
+- **JWT Authentication** with role-based access
+- **Real-time subscriptions** for live updates
 
-Follow these steps:
+### Infrastructure
+- **Supabase** for database, auth, and real-time features
+- **Row-Level Security** for data protection
+- Cloud deployment ready
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Architecture Highlights
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Mobile-first responsive design** optimized for iPad and mobile devices
+- **Lazy loading** with React.lazy() for optimized initial page loads
+- **Query caching** with TanStack Query for instant data reuse
+- **Component memoization** for expensive calculations
+- **Audit logging** for compliance and activity tracking
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Prerequisites
+- Node.js 18+
+- Supabase account (free tier works)
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/JoshuaWaldron215/Agency-Management-Dashboard.git
+cd Agency-Management-Dashboard
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Set up environment variables
+```bash
+cp .env.example .env
+```
+
+4. Add your Supabase credentials to `.env`:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+DATABASE_URL=your_database_url
+```
+
+5. Run database migrations (in Supabase SQL Editor)
+- Execute `supabase_migration.sql`
+- Execute `supabase_model_transactions.sql`
+- Execute `supabase_performance_indexes.sql`
+
+6. Start the development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+├── client/src/
+│   ├── components/     # Reusable UI components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utilities and helpers
+│   ├── pages/          # Route components
+│   └── integrations/   # Supabase client setup
+├── server/
+│   ├── index.ts        # Express server with API routes
+│   └── vite.ts         # Vite middleware
+└── shared/
+    └── schema.ts       # Database types and schemas
+```
 
-**Use GitHub Codespaces**
+## Security Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- JWT token validation on all API endpoints
+- Role-based access control (RBAC)
+- Row-Level Security (RLS) at database level
+- Rate limiting (30 requests/min per IP)
+- Input validation with Zod schemas
+- Audit logging for sensitive operations
+- Soft delete for user data (GDPR-friendly)
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/10fb3bcc-c1bf-4d84-8afe-b29c88f4a789) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT License
