@@ -63,47 +63,10 @@ A full-stack SaaS platform for agency performance tracking, earnings management,
 - **Component memoization** for expensive calculations
 - **Audit logging** for compliance and activity tracking
 
-## Getting Started
-
 ### Prerequisites
 - Node.js 18+
 - Supabase account (free tier works)
 
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/JoshuaWaldron215/Agency-Management-Dashboard.git
-cd Agency-Management-Dashboard
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Set up environment variables
-```bash
-cp .env.example .env
-```
-
-4. Add your Supabase credentials to `.env`:
-```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_PUBLISHABLE_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-DATABASE_URL=your_database_url
-```
-
-5. Run database migrations (in Supabase SQL Editor)
-- Execute `supabase_migration.sql`
-- Execute `supabase_model_transactions.sql`
-- Execute `supabase_performance_indexes.sql`
-
-6. Start the development server
-```bash
-npm run dev
-```
 
 ## Project Structure
 
