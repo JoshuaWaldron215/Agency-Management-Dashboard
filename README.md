@@ -31,19 +31,11 @@ A full-stack SaaS platform for agency performance tracking, earnings management,
 ## Tech Stack
 
 ### Frontend
-- **React 18** with TypeScript
-- **Vite** for fast development and building
-- **Tailwind CSS** for styling
-- **shadcn/ui** components (Radix UI primitives)
-- **TanStack Query** for server state management
-- **Recharts** for data visualization
-- **React Hook Form** with Zod validation
+- React 18 (TypeScript), Vite, Tailwind CSS, shadcn/ui (Radix UI), TanStack Query, Recharts, React Hook Form + Zod
 
 ### Backend
-- **Node.js** with Express
-- **PostgreSQL** via Supabase
-- **JWT Authentication** with role-based access
-- **Real-time subscriptions** for live updates
+- Node.js, Express, PostgreSQL (Supabase), JWT auth with role-based access
+
 
 ### Infrastructure
 - **Supabase** for database, auth, and real-time features
