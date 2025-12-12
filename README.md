@@ -1,11 +1,6 @@
-# Agency Management Dashboard
-
 A full-stack SaaS platform for agency performance tracking, earnings management, and team coordination. Built for mid-sized agencies with 30+ team members.
 
-![React](https://img.shields.io/badge/React-18.3-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Express-green)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-purple)
+> **Note:** Screenshots use demo/sample data. Production data and credentials are intentionally excluded.
 
 ## Features
 
@@ -53,36 +48,27 @@ A full-stack SaaS platform for agency performance tracking, earnings management,
 ### Infrastructure
 - **Supabase** for database, auth, and real-time features
 - **Row-Level Security** for data protection
-- Cloud deployment ready
 
-## Architecture Highlights
+----
+## 📊 Admin Analytics Dashboard
+*High-level KPIs, performance metrics, and sales analytics*
+<img width="2836" height="3298" alt="mapmgt com_ (3)" src="https://github.com/user-attachments/assets/27fefcb9-a4a4-499f-880e-95a8ec47e302" />
+----
+## 🧑‍💼 Admin Panel
+*Team management, model management, and audit logging*
+<img width="2836" height="1596" alt="mapmgt com_ (4)" src="https://github.com/user-attachments/assets/a0bd30aa-34ad-4950-959e-e61ea282dcaa" /># 
+----
+## 👤 Influencer Performance View
+*Individual Influencer analytics with charts and transaction history*
+<img width="2836" height="1922" alt="mapmgt com_ (5)" src="https://github.com/user-attachments/assets/d1082438-6030-4441-af93-e0b2870664bf" />
+----
+## 👥 Team Management
+*Role-based access, approvals, and team assignment*
+<img width="2836" height="2002" alt="mapmgt com_" src="https://github.com/user-attachments/assets/dbca0d7e-9040-47b7-ba3f-e45a55aafbd3" />
+----
 
-- **Mobile-first responsive design** optimized for iPad and mobile devices
-- **Lazy loading** with React.lazy() for optimized initial page loads
-- **Query caching** with TanStack Query for instant data reuse
-- **Component memoization** for expensive calculations
-- **Audit logging** for compliance and activity tracking
-
-### Prerequisites
-- Node.js 18+
-- Supabase account (free tier works)
 
 
-## Project Structure
-
-```
-├── client/src/
-│   ├── components/     # Reusable UI components
-│   ├── hooks/          # Custom React hooks
-│   ├── lib/            # Utilities and helpers
-│   ├── pages/          # Route components
-│   └── integrations/   # Supabase client setup
-├── server/
-│   ├── index.ts        # Express server with API routes
-│   └── vite.ts         # Vite middleware
-└── shared/
-    └── schema.ts       # Database types and schemas
-```
 
 ## Security Features
 
